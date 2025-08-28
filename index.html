@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>URECO | Coming Soon</title>
+
+  <!-- ✅ Favicon links -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-1.ico" />
+  <link rel="apple-touch-icon" href="favicon.ico" />
+  <meta name="theme-color" content="#0A0A0A" />
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #0A0A0A;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Background gradient glow */
+    body::before {
+      content: "";
+      position: absolute;   
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(255,82,28,0.2) 0%, transparent 70%);
+      animation: glow 10s infinite alternate;
+      z-index: 0;
+    }
+
+    @keyframes glow {
+      0% { transform: scale(1) rotate(0deg); }
+      100% { transform: scale(1.2) rotate(360deg); }
+    }
+
+    /* Particle animation */
+    .particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .particle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #FF521C;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: floatUp 10s linear infinite;
+    }
+
+    @keyframes floatUp {
+      from { transform: translateY(100vh) scale(0.5); opacity: 0; }
+      50% { opacity: 1; }
+      to { transform: translateY(-10vh) scale(1); opacity: 0; }
+    }
+
+    /* Logo */
+    .logo {
+      z-index: 1;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo img {
+      max-width: 280px;  /* bigger logo size */
+      height: auto;
+      filter: drop-shadow(0 0 12px rgba(255, 82, 28, 0.6));
+    }
+
+    /* Main text */
+    .content {
+      text-align: center;
+      z-index: 1;
+      padding: 2rem;
+    }
+
+    .content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #FFFFFF;
+    }
+
+    .content p {
+      font-size: 1.2rem;
+      color: #BBBBBB;
+      margin-bottom: 2rem;
+    }
+
+    /* Email notify */
+    .notify-form {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .notify-form input {
+      padding: 12px 15px;
+      border-radius: 30px;
+      border: none;
+      outline: none;
+      width: 250px;
+      max-width: 80vw;
+    }
+
+    .notify-form button {
+      padding: 12px 20px;
+      border-radius: 30px;
+      border: none;
+      background: #FF521C;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .notify-form button:hover {
+      background: #e04a18;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .logo img {
+        max-width: 180px;
+      }
+
+      .content h1 {
+        font-size: 2rem;
+      }
+
+      .content p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating particles -->
+  <div class="particles">
+    <div class="particle" style="left: 10%; animation-duration: 12s;"></div>
+    <div class="particle" style="left: 30%; animation-duration: 8s;"></div>
+    <div class="particle" style="left: 50%; animation-duration: 10s;"></div>
+    <div class="particle" style="left: 70%; animation-duration: 9s;"></div>
+    <div class="particle" style="left: 90%; animation-duration: 11s;"></div>
+  </div>
+
+  <!-- Logo -->
+  <div class="logo">
+    <img src="ureco-logo.svg" alt="URECO Logo">
+  </div>
+
+  <!-- Coming Soon Content -->
+  <div class="content">
+    <h1>India's ONLY Certified Contrast Therapy Center.</h1>
+    <p>We are preparing something special. Stay tuned for the ultimate luxury contrast therapy experience.</p>
+
+    <form class="notify-form" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST">
+      <input type="email" name="email" placeholder="Enter your email" required>
+      <button type="submit">Notify Me</button>
+    </form>
+  </div>
+
+</body>
+</html>
